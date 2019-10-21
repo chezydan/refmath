@@ -6,10 +6,14 @@ body{
 nav{
     background-color: darkviolet;
     color:white;
+    align-items: center;    
+
 }
 nav a{
     color:white;
     text-decoration: none;
+    margin-left: 35px;
+    align-self: center;
 }
 nav a:hover{
     text-decoration: underline;
