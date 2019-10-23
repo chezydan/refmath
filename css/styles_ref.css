@@ -1,6 +1,6 @@
 
 body{
-    background-color: coral;
+    background-color: rgb(182, 179, 163);
 }
 
 nav{
@@ -33,4 +33,12 @@ h3{
 
 .form{
     font-size: 17px;    
+}
+
+
+.tabgrid{
+    display:grid;
+    grid-template-columns: 15% 30% ;
+    grid-auto-rows : 
+
 }
