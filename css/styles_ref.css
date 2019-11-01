@@ -38,7 +38,9 @@ h3{
 
 .tabgrid{
     display:grid;
-    grid-template-columns: 30% 30% ;
-    grid-auto-rows : 
+  /*  grid-template-columns: repeat(autofit, minmax(85px, 1fr))*/
+
+    grid-template-columns: 30% 30% ; 
+    grid-auto-rows ; 
 
 }
