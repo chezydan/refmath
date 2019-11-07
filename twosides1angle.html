@@ -3,14 +3,15 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="./css/styles_ref.css">
+
         <title>2 sides , 1 angle</title>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async
                 src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
-
-<link rel="stylesheet" href="./css/styles_ref.css">
 
 
 
@@ -21,18 +22,21 @@
 <body>
 
     <h1> Solving triangle area with : 1/2 a b sin(c)</h1>
+ <fieldset>
+     <legend>parameters</legend>
 <label for "a"> a</label>
 <input id="a" type="text">  
 <label for "b"> b</label>
 <input id="b" type="text"> 
 <label for "C"> C (degrees)</label>
 <input type="text" id = "C">
-<label > sin(C)=</label>
+<label id="sinC" > sin(C)=</label>
+</fieldset> 
 <br>
-
+<p id="display"></p>
 <button type="button" id="solve">solve </button>
 <label for "result" ></label>
-<p id="result">   </p>
+<p class="result" id="result">   </p>
 
 
 

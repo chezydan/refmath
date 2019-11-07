@@ -1,6 +1,6 @@
 
 body{
-    background-color: rgb(182, 179, 163);
+    background-color:rgb(108, 145, 145);
 }
 
 nav{
@@ -18,6 +18,7 @@ nav a{
 nav a:hover{
     text-decoration: underline;
 }
+
 h2,h3,p{
     color:rgb(88, 20, 20);
     font-family: Arial, Helvetica, sans-serif
@@ -41,6 +42,41 @@ h3{
   /*  grid-template-columns: repeat(autofit, minmax(85px, 1fr))*/
 
     grid-template-columns: 30% 30% ; 
-    grid-auto-rows ; 
+    grid-auto-rows:auto ; 
 
+}
+input[type="text"]{
+    background-color:rgba(200,200,200,0.5);
+    border-style :none;
+    margin: 8px;
+    border-radius: 4px;
+    width:70px;
+}
+
+button{
+    background-color:rgba(0,255,0,0.1);
+    border-style:solid;
+    border-color:rgba(0,0,0,0.2);
+    margin: 8px;
+    width:70px;
+    height:30px;
+    border-radius:4px;
+
+}
+
+.result{
+    background-color:rgba(200,200,200,0.5);
+    margin:10px;
+    width:70px;
+    height:25px;
+    border-radius:4px;
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif
+
+}
+
+fieldset{
+    border-color:rgba(255,255,255,0.3);
+    border-style:solid;
+    border-radius:8px;
 }
