@@ -32,26 +32,33 @@ function solveSideCos(b,c,angleA){
     return Math.sqrt( Math.pow(b,2) + Math.pow(c,2) - 2*b*c *cosOf(angleA)     );
 }
 
+
 function solveAngle(a, c, C) {
     var sinA = a * sinOf(C) / c;
     return aSin(sinA);
 }
 
+const angleC2 = document.getElementById("C2");
 
-a.addEventListener('focus', ()=>{
-    a.value= solveSideCos(b.value, c.value, angleA.value);
+angleC.addEventListener('focus', ()=>{
+    angleC.value= solveAngle( c.value, b.value,  angleB.value);
+    angleC2.value = 180 - angleC.value;
+    
+
+});
+
+const angleA2 = document.getElementById("A2");
+
+angleA.addEventListener('focus', ()=>  {
+    angleA.value= complement(angleB.value, angleC.value);
+    angleA2.value = complement( angleB.value, angleC2.value );   
 });
 
 
-angleC.addEventListener('focus', ( )=>{
-    if (c.value < b.value){
-    angleC.value= solveAngle(c.value, a.value, angleA.value);
-    angleB.value= complement( angleA.value , angleC.value);
-    }
-    else{
-        angleB.value= solveAngle(b.value , a.value, angleA.value);
-        angleC.value = complement(angleA.value, angleB.value);
-    }
+a.addEventListener('focus', ()=> {
+    a.value = solveSide(b.value, angleA.value, angleB.value);
 });
 
-
+a2.addEventListener('focus', ()=> {
+    a2.value = solveSide(b.value, angleA2.value, angleB.value);
+});
