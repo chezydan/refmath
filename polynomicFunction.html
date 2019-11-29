@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Polynomic Function Builder</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+<style>
+.polExp{
+    width:3em;
+}
+</style>
+<link rel="stylesheet" href="./css/styles_ref.css">
+</head>
+<body>
+<h1>Polynomic Function Builder</h1>
+<h2>Builder</h2>
+
+<fieldset> <legend>parameters </legend>
+<input type="text" class="poly" value="0" id="pol">
+<input type="number"  min="0" max="12" class="polExp" value="3" id="polx" >
+<input type="text" class="poly" value="0">
+<input type="number"  min="0" max="12" class="polExp" value="2" >
+<input type="text" class="poly" value="0">
+<input type="number"  min="0" max="12" class="polExp" value="1" >
+<input type="text" class="poly" value="0">
+<input type="number"  min="0" max="12" class="polExp" value="0" >
+<br>
+<label for"X" >x=</label>
+<input type ="text" id="X" value="1">
+</fieldset>
+
+<br>
+<fieldset><legend>partial results</legend> 
+<input type="text" class="results"> 
+<input type="text" class="results"> 
+<input type="text" class="results"> 
+<input type="text" class="results"> 
+</fieldset>
+<br>
+<label for ="result">y=</label>
+<input type="text" id="result">
+
+<p  id="result" ></p>
+
+
+
+<script type='text/javascript' src="js/polynomic.js"></script> 
+
+</body>
+</html>
