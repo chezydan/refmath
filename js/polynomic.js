@@ -42,6 +42,16 @@ result.addEventListener('focus',() =>{
 makeTable.addEventListener("click",()=>{
  var inputX= Number(start.value);
  var   functionTable=document.createElement("table");
+ var titles= document.createElement("tr");
+ var t1 = document.createElement("th");
+ var t2 = document.createElement("th");
+ t1.textContent=" x ";
+ t2.textContent=" y ";
+ titles.appendChild(t1);
+ titles.appendChild(t2);
+ frameTable.appendChild(titles);
+ 
+ 
 for (var i = 0 ; i < rows.value  ; i++){
     var row = document.createElement("tr");
 for (var j = 0 ; j <1 ; j++){
@@ -50,7 +60,7 @@ for (var j = 0 ; j <1 ; j++){
     cell.appendChild(cellText);
     row.appendChild(cell);
 
-    var cellY = document.createElement("tr")    ;
+    var cellY = document.createElement("td")    ;
     var cellTextY = document.createTextNode(computeFunction(inputX));
     cellY.appendChild(cellTextY);
     row.appendChild(cellY);

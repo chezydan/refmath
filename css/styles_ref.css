@@ -50,6 +50,23 @@ input[type=number]{
     border-radius: 4px;
 }
 
+table, td, th {
+    border: 1px solid black;
+  }
+  
+ table {
+    border-collapse: collapse;
+    
+  }
+  
+ td, th {
+     width : 4em;
+   
+ }
+ td{
+    text-align:right;
+ }
+
 .form{
     font-size: 19px;    
 }
