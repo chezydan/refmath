@@ -8,7 +8,7 @@ const frameTable  = document.getElementById("frameTable");
 const rows = document.getElementById("rows");
 const start =   document.getElementById("start");
 const interval = document.getElementById("interval");
-
+const newWindow= document.getElementById("newWindow");
 
 const coeffs = document.getElementsByClassName("poly");
 const exponents = document.getElementsByClassName("polExp");
@@ -22,6 +22,17 @@ function computeFunction(x){
         y = y + partial;
     }
     return y;
+}
+
+function quotientDiff ( x, h){
+    
+    return (computeFunction(x +h) -computeFunction(x) )/ h;
+}
+
+
+function quotientDiffSecond ( x, h){
+    return (quotientDiff(x +h, h) -quotientDiff(x,h) )/ h  ;
+
 }
 
 
@@ -45,29 +56,58 @@ makeTable.addEventListener("click",()=>{
  var titles= document.createElement("tr");
  var t1 = document.createElement("th");
  var t2 = document.createElement("th");
+ var t3= document.createElement("th");
+ // titles (th)
  t1.textContent=" x ";
  t2.textContent=" y ";
+t3.textContent=" y' ";
  titles.appendChild(t1);
  titles.appendChild(t2);
- frameTable.appendChild(titles);
+ titles.appendChild(t3);
+ functionTable.appendChild(titles);
  
- 
+//each row 
 for (var i = 0 ; i < rows.value  ; i++){
     var row = document.createElement("tr");
 for (var j = 0 ; j <1 ; j++){
+ //x
     var cell = document.createElement("td");
     var cellText = document.createTextNode(inputX);
     cell.appendChild(cellText);
     row.appendChild(cell);
-
+//y
     var cellY = document.createElement("td")    ;
     var cellTextY = document.createTextNode(computeFunction(inputX));
     cellY.appendChild(cellTextY);
     row.appendChild(cellY);
+
+//y'
+    h= 0.0001;
+    var cellYt= document.createElement("td")  ;
+    var cellTextYt = document.createTextNode(quotientDiff(inputX, h).toFixed(2));
+    cellYt.appendChild(cellTextYt);
+    row.appendChild(cellYt);
+
+ //y'h
+    h= 0.0001;
+    var cellYtt= document.createElement("td")  ;
+    var cellTextYtt = document.createTextNode(quotientDiffSecond(inputX, h).toFixed(2));
+    cellYtt.appendChild(cellTextYtt);
+    row.appendChild(cellYtt);
+
 }
 functionTable.appendChild(row);
 inputX=inputX + Number( interval.value);
 }
 
  frameTable.appendChild(functionTable);
+ if (newWindow.checked == true){
+     var newDoc= window.open("");
+
+     newDoc.document.write('<html><head><style> td{text-align:right; }  td, th {width : 4em;} '
+     +'table, td, th { border: 1px solid black;} table {border-collapse: collapse;}</style>'
+     +' </head><body></body> </html>');
+     newDoc.document.body.appendChild(functionTable);
+     
+ }
 });
