@@ -17,6 +17,8 @@ const exponents = document.getElementsByClassName("polExp");
 const results = document.getElementsByClassName("results");
 
 
+
+
 function computeFunction(x){
     var y = 0;
     for (i = 0 ; i < exponents.length; i++){
@@ -127,3 +129,5 @@ reset.addEventListener("click", ()=>{
     }
 
 });
+
+

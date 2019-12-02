@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Quadratic Solver</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+<link rel="stylesheet" href="./css/styles_ref.css">
+</head>
+
+<body>
+<h1>Quadratic Solver</h1>
+
+
+<fieldset> <legend>parameters </legend>
+<input type ="text" id="a" placeholder="a" > <label>X^2  +</label>
+<input type ="text" id="b" placeholder="b" > <label>X +</label>
+<input type ="text" id="c" placeholder="c" > 
+</fieldset>
+
+<br>
+<button id="new" ></button>
+<fieldset id="results  "><legend>results</legend>
+<button id="solve" ></button>
+
+<label for="discriminant">discr:</label>
+<input type="text" id="discriminant" >
+    <p id ="result1"></p>
+    <p id ="result2"></p>
+
+</fieldset>
+
+<script type='text/javascript' src="js/quadratics.js"></script> 
+
+</body>
+</html>
