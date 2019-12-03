@@ -3,6 +3,10 @@ const discriminant = document.getElementById("discriminant");
 const res1 = document.getElementById("result1");
 const res2 = document.getElementById("result2");
 
+const a = document.getElementById("a");
+const b = document.getElementById("b");
+const c = document.getElementById("c");
+
 class Quadratic{
     constructor(a,b,c){
         this.a=a;
@@ -19,6 +23,7 @@ class Quadratic{
        // res1.innerHTML=Math.sqrt(discr,2);
             
         if (discr < 0){
+            
             return null;
         }
         else{
@@ -26,16 +31,15 @@ class Quadratic{
             var sqDisc = Math.sqrt(discr,2);
            // res1.innerHTML=sqDisc;
             Roots.push( (-this.b + sqDisc)/  (2* this.a )) ;
-            Roots.push( (-this.b - sqDisc)/  (2* this.a)) ;
+            //if (discr >0)
+               Roots.push( (-this.b - sqDisc)/  (2* this.a)) ;
 
             return Roots;
         }
     }
 }
-const a = document.getElementById("a");
-const b = document.getElementById("b");
-const c = document.getElementById("c");
-qua = new Quadratic(a.value,b.value,c.value);
+
+qua = new Quadratic(Number(a.value),Number(b.value),Number(c.value));
 
 solve.addEventListener("click", ()=>{
     var d = qua.getDiscriminant();
