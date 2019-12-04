@@ -17,20 +17,24 @@
 
 
 <fieldset> <legend>parameters </legend>
-<input type ="text" id="a" placeholder="a" > <label>X^2  +</label>
-<input type ="text" id="b" placeholder="b" > <label>X +</label>
-<input type ="text" id="c" placeholder="c" > 
+<input type ="text" id="a" onfocus="this.value=''" placeholder="a" > <label>X^2  +</label>
+<input type ="text" id="b" onfocus="this.value=''"  placeholder="b" > <label>X +</label>
+<input type ="text" id="c" onfocus="this.value=''" placeholder="c" > 
 </fieldset>
 
 <br>
-<button id="new" ></button>
+
+<button type = "reset" id="solve" ></button>
 <fieldset id="results  "><legend>results</legend>
-<button id="solve" ></button>
+
 
 <label for="discriminant">discr:</label>
 <input type="text" id="discriminant" >
-    <p id ="result1"></p>
-    <p id ="result2"></p>
+<br>
+
+<label>xi</label><input type="text" id="result1">
+<label>x</label><input type="text" id="result2">
+    
 
 </fieldset>
 

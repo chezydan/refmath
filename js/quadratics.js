@@ -62,9 +62,9 @@ class Quadratic{
             
             var sqDisc = Math.sqrt(discr,2);
            // res1.innerHTML=sqDisc;
-            Roots.push( (-this.b + sqDisc)/  (2* this.a )) ;
+            Roots.push( (-this.b + sqDisc)/  (2* this.a ).toFixed(3)) ;
            
-            Roots.push( (-this.b - sqDisc)/  (2* this.a)) ;
+            Roots.push( (-this.b - sqDisc)/  (2* this.a).toFixed(3)) ;
 
             return Roots;
         }
