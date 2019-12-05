@@ -17,9 +17,11 @@
 
 
 <fieldset> <legend>parameters </legend>
-<input type ="text" id="a" onfocus="this.value=''" placeholder="a" > <label>X^2  +</label>
-<input type ="text" id="b" onfocus="this.value=''"  placeholder="b" > <label>X +</label>
-<input type ="text" id="c" onfocus="this.value=''" placeholder="c" > 
+<input type ="text" class="coeff" id="a" onfocus="this.value=''" placeholder="a" > <label>X^2  +</label>
+<input type ="text" id="b" class="coeff" onfocus="this.value=''"  placeholder="b" > <label>X +</label>
+<input type ="text" id="c" class="coeff" onfocus="this.value=''" placeholder="c" >  <br>
+<p  id ="display" class ="form"> </p>
+
 </fieldset>
 
 <br>
@@ -32,7 +34,7 @@
 <input type="text" id="discriminant" >
 <br>
 
-<label>xi</label><input type="text" id="result1">
+<label>xi</label><input type="text" id="result1" minlength="4" maxlength="8" >
 <label>x</label><input type="text" id="result2">
     
 

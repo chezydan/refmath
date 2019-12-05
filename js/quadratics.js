@@ -7,6 +7,8 @@ const a = document.getElementById("a");
 const b = document.getElementById("b");
 const c = document.getElementById("c");
 
+const coeffs=  document.getElementsByName;
+
 
 class Complex{
     constructor(r,i=0){
@@ -38,7 +40,7 @@ class Quadratic{
     }
 
     imgDisplay(i){
-        return i+"i";}
+        return i.toFixed(2)+"i";}
         
 
     Solve(){
@@ -54,8 +56,8 @@ class Quadratic{
             var imag = negSqDisc /(2*this.a);
             //compRes= new Complex(1,2);//(-this.b/ (2*this.a) , negSqDisc /(2*this.a));
             
-            Roots.push(real +"+" +this.imgDisplay(imag));
-            Roots.push(real +"-"+(this.imgDisplay(imag)));
+            Roots.push(real.toFixed(2) +"+" +this.imgDisplay(imag));
+            Roots.push(real.toFixed(2) +"-"+(this.imgDisplay(imag)));
             return Roots;
         }
         else{
@@ -75,6 +77,14 @@ class Quadratic{
     c1 = new Complex(1,3);
 qua = new Quadratic(Number(a.value),Number(b.value),Number(c.value));
 
+function sign(num){
+    if (num <0){
+    return "";}
+    else{
+    return "+";}
+}
+
+
 solve.addEventListener("click", ()=>{
     qua = new Quadratic(Number(a.value),Number(b.value),Number(c.value));
  
@@ -84,5 +94,16 @@ solve.addEventListener("click", ()=>{
     res1.value = s[0];//.toFixed(3);
     
         res2.value = s[1];//.toFixed(3);
+
+    var expr =   a.value + "x^2 " + sign(b.value)+  b.value +"x "+ sign(c.value)+ c.value;
+   
+
+   document.getElementById("display").innerHTML=expr;
+
 });
 
+
+[a,b,c].forEach(item=>{item.addEventListener("keyup",() =>{
+    var expr =   a.value + "x^2 " + sign(b.value)+  b.value +"x "+ sign(c.value)+ c.value;
+    document.getElementById("display").innerHTML=expr;
+}) });

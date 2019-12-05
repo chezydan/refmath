@@ -91,6 +91,9 @@ input[type="text"]{
     text-align:right;
    
 }
+#result1 ,#result2{
+width:100px;
+}
 
 button{
     background-color:rgba(0,255,0,0.1);
