@@ -19,6 +19,14 @@ const results = document.getElementsByClassName("results");
 
 
 
+function sign(num){
+    if (num <0){
+    return "";}
+    else{
+    return "+";}
+}
+
+
 function computeFunction(x){
     var y = 0;
     for (i = 0 ; i < exponents.length; i++){
@@ -72,6 +80,7 @@ makeTable.addEventListener("click",()=>{
  t4.textContent=" y'' ";
 
  titles.append(t1,t2,t3,t4);
+
 
  functionTable.appendChild(titles);
  
@@ -131,3 +140,19 @@ reset.addEventListener("click", ()=>{
 });
 
 
+
+x.addEventListener("focus", () =>{
+    var expr = "";
+    for ( i = 0 ; i < coeffs.length; i++)
+    {
+        if (coeffs[i].value==0){
+            expr = expr;  }
+        else {
+            expr = expr + sign(coeffs[i].value) + coeffs[i].value +"X^"+exponents[i].value +" ";
+        }
+        
+        }
+    
+
+    document.getElementById("display").innerHTML=expr;
+}) ;
